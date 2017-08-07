@@ -1,4 +1,4 @@
-# Node Image Servevr
+# Node Image Server
 
 File server for uploading, manipulating, and serving images
 
