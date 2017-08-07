@@ -1,10 +1,10 @@
-# API Server Base
+# Node Image Servevr
 
-Base API server
+File server for uploading, manipulating, and serving images
 
 ## Stack
 
-* [Node.js](https://nodejs.org) as a web server to serve the front end
+* [Node.js](https://nodejs.org) as a web server
 * [Grunt](https://gruntjs.com/) as a task runner, for automation and helpful scripts
     * (I may switch to [Gulp](http://gulpjs.com/) for this at some point)
 * [ESLint](http://eslint.org/) for JS linting (enforced on pre-commit hook)
@@ -43,10 +43,9 @@ npm install -g grunt-cli
     1. `bootstrap/` contains bootstrap code for app initialization/startup
     2. `controllers/` contains the controllers, which handle requests/responses
         1. They will typically call out to services to do any real work
-    3. `resources/` contains files that host constants
-    4. `routes/` contain the definition of the express routes, which route requests to controllers
-    5. `services/` contain all the services which host all business logic
-    6. At the root you will find all config files
+    3. `routes/` contain the definition of the express routes, which route requests to controllers
+    4. `services/` contain all the services which host all business logic
+    5. At the root you will find all config files
 
 3. Lint
 
@@ -57,4 +56,4 @@ npm install -g grunt-cli
 npm start
 ```
 
-   By default this will start on port 3000
+   By default this will start on port 3001
