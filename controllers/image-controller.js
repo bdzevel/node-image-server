@@ -7,7 +7,7 @@ const CONSTANTS = require('../resources/constants');
 const storage = multer.diskStorage({
   destination: CONSTANTS.PUBLIC,
   filename: function (req, file, cb) {
-    const mimeType = file.mimetype,
+    const mimeType = file.mimetype;
     const extension = file.filename.replace(/image\//, '');
     fileService.generateUniqueFileName(CONSTANTS.PUBLIC, extension)
       .then((name) => cb(null, name));
