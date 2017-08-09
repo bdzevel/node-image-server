@@ -1,12 +1,10 @@
 const fs = require('fs');
-const path = require('path');
 
-const ROOT = path.resolve(__dirname, '..');
-const PUBLIC = path.join(ROOT, 'public');
+const CONSTANTS = require('../resources/constants');
 
 function publicFolderExists() {
   return new Promise(function(resolve) {
-    fs.access(PUBLIC, function(err) {
+    fs.access(CONSTANTS.PUBLIC, function(err) {
       if (err) {
         return resolve(false);
       }
@@ -17,7 +15,7 @@ function publicFolderExists() {
 
 function createPublicFolder() {
   return new Promise(function(resolve) {
-    fs.mkdir(PUBLIC, resolve);
+    fs.mkdir(CONSTANTS.PUBLIC, resolve);
   });
 }
 
