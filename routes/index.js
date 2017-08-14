@@ -12,6 +12,7 @@ module.exports = function(app) {
     res.status(404).end();
   });
 
+  // eslint-disable-next-line
   app.use(function(err, req, res, next) {
     winston.error('Uncaught error: ', err.stack);
     res.status(500).end();
