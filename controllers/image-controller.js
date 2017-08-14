@@ -6,11 +6,11 @@ const CONSTANTS = require('../resources/constants');
 
 const storage = multer.diskStorage({
   destination: CONSTANTS.PUBLIC,
-  filename: function (req, file, cb) {
+  filename(req, file, cb) {
     const extension = file.mimetype.replace(/image\//, '');
     fileService.generateUniqueFileName(CONSTANTS.PUBLIC, extension)
-      .then((name) => cb(null, name));
-  }
+      .then(name => cb(null, name));
+  },
 });
 const upload = multer({
   storage,
