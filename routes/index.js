@@ -1,12 +1,13 @@
 const winston = require('winston');
 const serveStatic = require('serve-static');
 
+const authController = require('../controllers/auth-controller');
 const imageController = require('../controllers/image-controller');
 
 module.exports = function(app) {
   app.use(serveStatic('public'));
 
-  app.put('/api/images', imageController.upload, imageController.put);
+  app.put('/api/images', authController.isAuthorized, imageController.upload, imageController.put);
 
   app.use(function(req, res) {
     res.status(404).end();
